@@ -1,2 +1,4 @@
 bokeh~=3.0.3
 Flask~=2.2.2
+notebook~=6.5.2
+pyproj~=3.4.1
