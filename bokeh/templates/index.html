@@ -4,13 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ cdn_css|safe }}">
+    <link rel="stylesheet" href="{{ cdn_css|safe}}">
     <title>Bokeh Example</title>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.3.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.0.3.min.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <h1>Welcome to Bokeh Example</h1>
     <div>
         {{bokeh_script|safe}}
+    </div>
+    <div>
+        <p>Showing aiports</p>
+        {{airports_script|safe}}
+        {{airports_div|safe}}
     </div>
 </body>
 

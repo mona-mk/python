@@ -1,9 +1,9 @@
 import xyzservices.providers as xyz
 from bokeh.plotting import figure
-from bokeh.io import output_file, show
 from bokeh.models import ColumnDataSource, HoverTool
 from bokeh.sampledata.airport_routes import airports
 from pyproj import Transformer
+from bokeh.embed import components
 
 # prepare data
 transformer = Transformer.from_crs("EPSG:4326", "EPSG:3857")
@@ -33,7 +33,5 @@ hover = HoverTool(
 )
 f.add_tools(hover)
 
-# output file
-output_file("airports.html")
-
-show(f)
+# return individual components of a standalone document to embed
+airports_script, airports_div = components(f)
